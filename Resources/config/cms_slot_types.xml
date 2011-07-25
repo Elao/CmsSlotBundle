@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="elao.cms_slot.type.jeditable.class">Elao\CmsSlotBundle\CmsSlot\Type\JeditableCmsSlotType</parameter>
+    </parameters>
+
+    <services>
+        <service id="elao.cms_slot.type.jeditable" class="%elao.cms_slot.type.jeditable.class%" public="false">
+            <tag name="elao.cms_slot.type" template_display="ElaoCmsSlotBundle:CmsSlotType:jeditable_display.html.twig" template_edit="ElaoCmsSlotBundle:CmsSlotType:jeditable_edit.html.twig" />
+        </service>
+    </services>
+	
+</container>

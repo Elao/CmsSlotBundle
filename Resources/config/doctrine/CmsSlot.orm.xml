@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                  http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="Elao\CmsSlotBundle\Entity\CmsSlot" table="elao_cms_slot" repository-class="Elao\CmsSlotBundle\Entity\CmsSlotRepository">
+        <id name="id" type="integer"><generator strategy="IDENTITY" /></id>
+        <field name="code" column="code" type="string" length="255" unique="true" />
+        <field name="content" column="content" type="array"  />
+    </entity>
+
+</doctrine-mapping>
