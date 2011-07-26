@@ -1,7 +1,9 @@
 
 div.elao_cms_slot_editable {
-    padding: 4px;
-    border: 1px solid #666;
+    padding:            4px;
+    border:             1px dashed #666;
+    background-image:   url("/bundles/elaocmsslot/images/editable.png");
+    background-repeat:  repeat;
 }
 
 div.elao_cms_slot_editable button.button-save {
