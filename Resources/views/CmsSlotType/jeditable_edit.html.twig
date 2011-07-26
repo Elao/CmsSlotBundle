@@ -1,7 +1,4 @@
-<div id="{{ editable.element_id }}" class="elao_cms_slot_editable">
-    {% include "ElaoCmsSlotBundle:CmsSlotType:jeditable_display.html.twig" with {'value': editable.element_value} %}
-</div>
-
+<div id="{{ editable.element_id }}" class="elao_cms_slot_editable">{% include "ElaoCmsSlotBundle:CmsSlotType:jeditable_display.html.twig" with {'value': editable.element_value} %}</div>
 <script type="text/javascript">
     $('#{{ editable.element_id }}').editable('{{ path(editable.url) }}', {
         submitdata: function(){ return {type: 'jeditable', code: '{{ editable.element_name }}'}; },
