@@ -32,9 +32,9 @@ class ElaoCmsSlotExtension extends Extension {
 
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
 
-        if (!in_array(strtolower($config['db_driver']), array ('orm', 'mongodb'))) {
+        /*if (!in_array(strtolower($config['db_driver']), array ('orm', 'mongodb'))) {
             throw new \InvalidArgumentException(sprintf('Invalid db driver "%s".', $config['db_driver']));
-        }
+        }*/
         
         $container->setParameter('elao.cms_slot.manager.i18n',       $config['i18n']);
         $container->setParameter('elao.cms_slot.manager.permission', $config['permission']);
@@ -45,14 +45,14 @@ class ElaoCmsSlotExtension extends Extension {
         if (isset($config['slots_provider'])){
             $slotProvider = $config['slots_provider'];
         }else{
-            if ($config['db_driver'] == 'orm'){
+            //if ($config['db_driver'] == 'orm'){
                 // Charge le slot provider par défaut
                 $loader->load('orm.xml');
                 
                 $slotProvider = 'elao.cms_slot.provider.orm';
-            }elseif ($config['db_driver'] == 'odm'){
+            /*}elseif ($config['db_driver'] == 'odm'){
                 
-            }
+            }*/
         }
         
         $container->getDefinition('elao.cms_slot.manager')->addMethodCall('setSlotProvider', array(new Reference($slotProvider)));

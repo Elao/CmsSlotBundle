@@ -15,6 +15,6 @@ interface CmsSlotProviderInterface
 {
     public function getCmsSlot($code);
     
-    public function updateCmsSlot($cmsSlot);
+    public function updateCmsSlot(CmsSlot $cmsSlot);
     
 }

@@ -10,7 +10,7 @@
 
     <services>
         <service id="elao.cms_slot.type.jeditable" class="%elao.cms_slot.type.jeditable.class%" public="false">
-            <tag name="elao.cms_slot.type" template_display="ElaoCmsSlotBundle:CmsSlotType:jeditable_display.html.twig" template_edit="ElaoCmsSlotBundle:CmsSlotType:jeditable_edit.html.twig" />
+            <tag name="elao.cms_slot.type" template_display="ElaoCmsSlotBundle:CmsSlotType:jeditable_display.html.php" template_edit="ElaoCmsSlotBundle:CmsSlotType:jeditable_edit.html.php" />
         </service>
     </services>
 	
