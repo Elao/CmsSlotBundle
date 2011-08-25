@@ -38,7 +38,7 @@ class Configuration
             ->children()
             	//->scalarNode('db_driver')->cannotBeOverwritten()->isRequired()->cannotBeEmpty()->end()
                 ->scalarNode('slot_provider')->end()
-                ->scalarNode('permission')->defaultValue('CMS_SLOT_EDIT')->end()
+                ->scalarNode('permission')->defaultValue('ROLE_ADMIN')->end()
                 ->arrayNode('tinymce')
                     ->children()
                         ->scalarNode('enabled')->defaultFalse()->end()

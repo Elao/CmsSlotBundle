@@ -29,7 +29,7 @@ class CmsSlotRepository extends EntityRepository implements CmsSlotProviderInter
         return $cmsSlot;
     }
     
-    public function updateCmsSlot(BaseCmsSlot $cmsSlot){
+    public function updateCmsSlot($cmsSlot){
         
         $this->_em->persist($cmsSlot);
         $this->_em->flush();

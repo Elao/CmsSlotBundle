@@ -4,7 +4,7 @@ echo $editable['element_value'];
 ?>
 </div>
 <script type="text/javascript">
-    $('#<?php echo $editable['element_id'] ?>').editable('<?php echo $editable['url'] ?>', {
+    $('#<?php echo $editable['element_id'] ?>').editable('<?php echo $view['router']->generate($editable['url']) ?>', {
         submitdata: function(){ return {type: 'jeditable', code: '<?php echo $editable['element_name'] ?>'}; },
         <?php foreach ($editable['options'] as $option => $value) : ?>
             <?php echo $option ?> : "<?php echo $value ?>",

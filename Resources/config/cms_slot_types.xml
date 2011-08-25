@@ -6,11 +6,16 @@
 
     <parameters>
         <parameter key="elao.cms_slot.type.jeditable.class">Elao\CmsSlotBundle\CmsSlot\Type\JeditableCmsSlotType</parameter>
+        <parameter key="elao.cms_slot.type.editable.class">Elao\CmsSlotBundle\CmsSlot\Type\EditableCmsSlotType</parameter>
     </parameters>
 
     <services>
         <service id="elao.cms_slot.type.jeditable" class="%elao.cms_slot.type.jeditable.class%" public="false">
             <tag name="elao.cms_slot.type" template_display="ElaoCmsSlotBundle:CmsSlotType:jeditable_display.html.php" template_edit="ElaoCmsSlotBundle:CmsSlotType:jeditable_edit.html.php" />
+        </service>
+        
+        <service id="elao.cms_slot.type.editable" class="%elao.cms_slot.type.editable.class%" public="false">
+            <tag name="elao.cms_slot.type" template_display="ElaoCmsSlotBundle:CmsSlotType:editable_display.html.php" template_edit="ElaoCmsSlotBundle:CmsSlotType:editable_edit.html.php" />
         </service>
     </services>
 	
