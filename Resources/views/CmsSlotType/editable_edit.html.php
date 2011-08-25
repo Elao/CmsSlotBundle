@@ -7,7 +7,10 @@
 $(function(){
     $('#<?php echo $editable['element_id'] ?>').bind('edit', function(){
         var container = $('<div>').addClass('modal').appendTo('body');
-        $.get('<?php echo $view['router']->generate('elao_cms_slot_edit') ?>', function(data){
+        $.get('<?php echo $view['router']->generate('elao_cms_slot_edit') ?>', {
+        type: 'editable',
+        code: '<?php echo $editable['element_name'] ?>'
+    }, function(data){
             container.append(data);
             
             container.overlay({

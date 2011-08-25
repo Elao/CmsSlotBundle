@@ -31,14 +31,14 @@ class CoreController extends Controller {
     
     public function editAction()
     {
-        /*$sCode     = $this->getRequest()->request->get('code');
-        $sType     = $this->getRequest()->request->get('type');
-        
-        $slotManager  = $this->container->get('elao.cms_slot.manager');
-        $slot         = $slotManager->getSlot($sCode);
-        $slotType     = $slotManager->getSlotType($sType);
+        $code     = $this->getRequest()->get('code');
+        $type     = $this->getRequest()->get('type');
 
-        $slotType->updateSlot($slot, $this->getRequest()->request->all());
+        $slotManager  = $this->container->get('elao.cms_slot.manager');
+        $slot         = $slotManager->getSlot($code);
+        $slotType     = $slotManager->getSlotType($type);
+
+        /*$slotType->updateSlot($slot, $this->getRequest()->request->all());
         $slotManager->updateSlot($slot);*/
         return $this->render('ElaoCmsSlotBundle:CmsSlotType:editable_form.html.php');
         return $this->render($slotType->getTemplateDisplay(), $slotType->getTemplateDisplayParameters($slot));
