@@ -3,31 +3,34 @@
     echo nl2br($editable['element_value']);
 ?>
 </div>
-<script type="text/javascript">
-$(function(){
-    $('#<?php echo $editable['element_id'] ?>').bind('edit', function(){
-        var container = $('<div>').addClass('modal').appendTo('body');
-        $.get('<?php echo $view['router']->generate('elao_cms_slot_edit') ?>', {
-        type: 'editable',
-        code: '<?php echo $editable['element_name'] ?>'
-    }, function(data){
-            container.append(data);
-            
-            container.overlay({
+<div class="modal" id="<?php echo $editable['element_id'] ?>-overlay">
+    <form action="<?php echo $view['router']->generate($editable['url']) ?>" class="b-form b-big-form">
+        
+            <h2 class="b-form__title">Редактирование</h2>
 
-                    // some mask tweaks suitable for modal dialogs
-                    mask: {
-                            color: '#333',
-                            loadSpeed: 200,
-                            opacity: 0.9
-                    },
+            <div class="b-form-box">
+                
+                    <div class="b-form-line">
+                            <dl class="b-form-line__in">
+                                    <dt class="b-form-line__label"><label for="title"><strong class="b-form-require">Заголовок: <i class="b-ico">*</i></strong></label></dt>
+                                    <dd class="b-form-line__content">
+                                            <textarea></textarea>
+                                            <input type="text" name="title" id="title" value="" />
+                                            <p class="b-form-note">&nbsp;</p>
 
-                    closeOnClick: false,
-                    fixed: false,
-                    load: true
-            });
-        });
-        //container.load('<?php echo $view['router']->generate('elao_cms_slot_edit') ?>');
-    });
-});
-</script>
+                                    </dd>
+                            </dl><!-- /b-form-line__in -->
+                    </div><!-- /b-form-line -->
+                
+           </div> 
+
+            <div class="b-form-buttons">
+                    <span class="b-button">
+                            <span class="b-button__in">
+                                    <input type="submit" value="Сохранить" class="b-button-text" />
+                            </span>
+                    </span>
+            </div>
+
+    </form><!-- /b-form -->
+</div>
