@@ -55,7 +55,11 @@ class ElaoCmsSlotExtension extends Extension {
             }*/
         }
         
-        $container->getDefinition('elao.cms_slot.manager')->addMethodCall('setSlotProvider', array(new Reference($slotProvider)));
+        $container->getDefinition('elao.cms_slot.manager')->addMethodCall('setSlotProvider', array('editable', new Reference($slotProvider)));
+        
+        // TODO Fix hardcode
+        $slotProvider = 'elao.cms_slot.provider.news';
+        $container->getDefinition('elao.cms_slot.manager')->addMethodCall('setSlotProvider', array('news', new Reference($slotProvider)));
     }
 
     protected function doConfigLoad(array $config, ContainerBuilder $container) {

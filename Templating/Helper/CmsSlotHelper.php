@@ -53,9 +53,9 @@ class CmsSlotHelper extends Helper
         if (!$slotType){
             throw new Exception("The slotType $slotType is not found");
         }
-        
+
         // Slot object
-        $slot      = $this->getSlotManager()->getSlot($slotName);
+        $slot      = $this->getSlotManager()->getSlot($slotType, $slotName);
         
         // Je suis en mode édition
         if ($editMode){

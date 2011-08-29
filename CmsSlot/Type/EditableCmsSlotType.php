@@ -55,13 +55,13 @@ class EditableCmsSlotType extends BaseCmsSlotType
         }else{
             $value = 'Edit me';
         }
-        
+
         $type = 'text';
         if (isset($parameters['type'])){
             if ($parameters['type'] == 'textarea'){
                 $type = 'textarea';
                 if (isset($parameters['rich']) && $parameters['rich']){
-                    $type = 'mce';
+                    $type = 'ckeditor';
                 }
             }
         }        
