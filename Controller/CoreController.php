@@ -20,27 +20,12 @@ class CoreController extends Controller {
         $sType     = $this->getRequest()->request->get('type');
         
         $slotManager  = $this->container->get('elao.cms_slot.manager');
-        $slot         = $slotManager->getSlot($sCode);
         $slotType     = $slotManager->getSlotType($sType);
+        $slot         = $slotManager->getSlot($slotType, $sCode);
 
         $slotType->updateSlot($slot, $this->getRequest()->request->all());
-        $slotManager->updateSlot($slot);
+        $slotManager->updateSlot($slotType, $slot);
         
-        return $this->render($slotType->getTemplateDisplay(), $slotType->getTemplateDisplayParameters($slot));
-    }
-    
-    public function editAction()
-    {
-        $code     = $this->getRequest()->get('code');
-        $type     = $this->getRequest()->get('type');
-
-        $slotManager  = $this->container->get('elao.cms_slot.manager');
-        $slot         = $slotManager->getSlot($code);
-        $slotType     = $slotManager->getSlotType($type);
-
-        /*$slotType->updateSlot($slot, $this->getRequest()->request->all());
-        $slotManager->updateSlot($slot);*/
-        return $this->render('ElaoCmsSlotBundle:CmsSlotType:editable_form.html.php');
         return $this->render($slotType->getTemplateDisplay(), $slotType->getTemplateDisplayParameters($slot));
     }
 

@@ -116,9 +116,9 @@ class CmsSlotManager {
         return $this->getSlotProvider($slotType)->getCmsSlot($slotName);
     }
     
-    public function updateSlot(CmsSlot $slot) {
+    public function updateSlot($slotType, $slot) {
         
-        $this->getSlotProvider()->updateCmsSlot($slot);
+        $this->getSlotProvider($slotType)->updateCmsSlot($slot);
     }
 
 }

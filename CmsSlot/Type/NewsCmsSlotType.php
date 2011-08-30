@@ -22,7 +22,6 @@ class NewsCmsSlotType extends BaseCmsSlotType
 
     public function getName()
     {
-
         return 'news';
     }
 
@@ -31,7 +30,7 @@ class NewsCmsSlotType extends BaseCmsSlotType
         $news->setTitle($data['title']);
         $news->setAnnounce($data['announce']);
         $news->setDetail($data['detail']);
-        $news->setPublishDate($data['publishDate']);
+        $news->setPublishDate(new \DateTime($data['publishDate']));
     }
 
     public function getTemplateDisplayParameters(News $news, $options = array())
