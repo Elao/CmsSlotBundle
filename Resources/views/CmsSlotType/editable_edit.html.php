@@ -16,7 +16,7 @@
                                     <dt class="b-form-line__label"><label for="title"><strong class="b-form-require">Текст: <i class="b-ico">*</i></strong></label></dt>
                                     <dd class="b-form-line__content">
                                             <?php if ($editable['options']['type'] == 'ckeditor') : ?><textarea rows="0" style="border: medium none; padding: 0pt; height: 0pt;"></textarea><?php endif; ?>
-                                            <textarea id="editableValue" rows="10" name="value"<?php if ($editable['options']['type'] == 'ckeditor') : ?> class="ckeditor"<?php endif; ?>><?php echo $editable['element_value']; ?></textarea>
+                                            <textarea id="<?php echo $editable['element_id'] ?>-editableValue" rows="10" name="value"<?php if ($editable['options']['type'] == 'ckeditor') : ?> class="ckeditor"<?php endif; ?>><?php echo $editable['element_value']; ?></textarea>
                                             <p class="b-form-note">Жмите кнопку сохранить и ждите ответного гудка</p>
 
                                     </dd>
