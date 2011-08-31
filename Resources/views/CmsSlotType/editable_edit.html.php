@@ -35,3 +35,8 @@
 
     </form><!-- /b-form -->
 </div>
+<script type="text/javascript">
+$(function(){
+    $('#<?php echo $editable['element_id'] ?>-overlay').detach().appendTo('body');        
+});
+</script>

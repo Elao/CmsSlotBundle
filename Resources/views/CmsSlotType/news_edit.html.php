@@ -59,3 +59,8 @@
 
     </form><!-- /b-form -->
 </div>
+<script type="text/javascript">
+$(function(){
+    $('#news-<?php echo $news->getId() ?>-overlay').detach().appendTo('body');        
+});
+</script>
