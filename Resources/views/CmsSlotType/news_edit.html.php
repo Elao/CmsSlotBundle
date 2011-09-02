@@ -14,7 +14,7 @@
                                     <dt class="b-form-line__label"><label for="title"><strong class="b-form-require">Заголовок: <i class="b-ico">*</i></strong></label></dt>
                                     <dd class="b-form-line__content">
                                             <input type="text" name="title" value="<?php echo $news->getTitle() ?>" />
-                                            <p class="b-form-note">Жмите кнопку сохранить и ждите ответного гудка</p>
+                                            <p class="b-form-note">Заголовок новости</p>
 
                                     </dd>
                             </dl><!-- /b-form-line__in -->
@@ -22,8 +22,9 @@
                             <dl class="b-form-line__in">
                                     <dt class="b-form-line__label"><label for="announce"><strong class="b-form-require">Анонс: <i class="b-ico">*</i></strong></label></dt>
                                     <dd class="b-form-line__content">
-                                            <textarea name="announce"><?php echo $news->getAnnounce() ?></textarea>
-                                            <p class="b-form-note">Жмите кнопку сохранить и ждите ответного гудка</p>
+                                            <textarea rows="0" style="border: medium none; padding: 0pt; height: 0pt;"></textarea>
+                                            <textarea id="news-<?php echo $news->getId() ?>-announce" class="ckeditor" name="announce"><?php echo $news->getAnnounce() ?></textarea>
+                                            <p class="b-form-note">Анонс новости</p>
 
                                     </dd>
                             </dl><!-- /b-form-line__in -->
@@ -31,8 +32,9 @@
                             <dl class="b-form-line__in">
                                     <dt class="b-form-line__label"><label for="detail"><strong class="b-form-require">Текст новости: <i class="b-ico">*</i></strong></label></dt>
                                     <dd class="b-form-line__content">
-                                            <textarea name="detail"><?php echo $news->getDetail() ?></textarea>
-                                            <p class="b-form-note">Жмите кнопку сохранить и ждите ответного гудка</p>
+                                            <textarea rows="0" style="border: medium none; padding: 0pt; height: 0pt;"></textarea>
+                                            <textarea id="news-<?php echo $news->getId() ?>-detail" class="ckeditor" name="detail"><?php echo $news->getDetail() ?></textarea>
+                                            <p class="b-form-note">Подробный текст новости</p>
 
                                     </dd>
                             </dl><!-- /b-form-line__in -->                            
@@ -41,7 +43,7 @@
                                     <dt class="b-form-line__label"><label for="publishDate"><strong class="b-form-require">Дата публикации: <i class="b-ico">*</i></strong></label></dt>
                                     <dd class="b-form-line__content">
                                             <input type="text" name="publishDate" value="<?php echo $news->getPublishDate() ? $news->getPublishDate()->format('d.m.Y') : '' ?>" />
-                                            <p class="b-form-note">Жмите кнопку сохранить и ждите ответного гудка</p>
+                                            <p class="b-form-note">Дата в формате: дд.мм.гггг чч:мм</p>
 
                                     </dd>
                             </dl><!-- /b-form-line__in -->
