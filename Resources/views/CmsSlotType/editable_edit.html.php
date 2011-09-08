@@ -1,6 +1,6 @@
 <div id="<?php echo $editable['element_id'] ?>" class="cms_slot_editable">
-<?php //   {% include "ElaoCmsSlotBundle:CmsSlotType:jeditable_display.html.php" with {'value': editable.element_value} %}
-    echo $editable['element_value'];
+<?php
+    echo $view->render('ElaoCmsSlotBundle:CmsSlotType:editable_display.html.php', array('value' => $editable['element_value']));
 ?>
 </div>
 <div class="modal" id="<?php echo $editable['element_id'] ?>-overlay">

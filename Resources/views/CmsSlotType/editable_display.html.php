@@ -1,1 +1,1 @@
-<?php echo nl2br($value);
+<?php echo $value;

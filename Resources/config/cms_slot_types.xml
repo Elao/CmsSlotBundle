@@ -8,6 +8,7 @@
         <parameter key="elao.cms_slot.type.jeditable.class">Elao\CmsSlotBundle\CmsSlot\Type\JeditableCmsSlotType</parameter>
         <parameter key="elao.cms_slot.type.editable.class">Elao\CmsSlotBundle\CmsSlot\Type\EditableCmsSlotType</parameter>
         <parameter key="elao.cms_slot.type.news.class">Elao\CmsSlotBundle\CmsSlot\Type\NewsCmsSlotType</parameter>
+        <parameter key="elao.cms_slot.type.article.class">Elao\CmsSlotBundle\CmsSlot\Type\ArticleCmsSlotType</parameter>
     </parameters>
 
     <services>
@@ -21,6 +22,10 @@
         
         <service id="elao.cms_slot.type.news" class="%elao.cms_slot.type.news.class%" public="false">
             <tag name="elao.cms_slot.type" template_display="ElaoCmsSlotBundle:CmsSlotType:news_display.html.php" template_edit="ElaoCmsSlotBundle:CmsSlotType:news_edit.html.php" />
+        </service>
+        
+        <service id="elao.cms_slot.type.article" class="%elao.cms_slot.type.article.class%" public="false">
+            <tag name="elao.cms_slot.type" template_display="ElaoCmsSlotBundle:CmsSlotType:article_display.html.php" template_edit="ElaoCmsSlotBundle:CmsSlotType:article_edit.html.php" />
         </service>
     </services>
 	
