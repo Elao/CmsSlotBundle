@@ -42,7 +42,7 @@
                             <dl class="b-form-line__in">
                                     <dt class="b-form-line__label"><label for="publishDate"><strong class="b-form-require">Дата публикации: <i class="b-ico">*</i></strong></label></dt>
                                     <dd class="b-form-line__content">
-                                            <input type="text" name="publishDate" value="<?php echo $news->getPublishDate() ? $news->getPublishDate()->format('d.m.Y') : '' ?>" />
+                                            <input type="text" name="publishDate" value="<?php echo $news->getPublishDate() ? $news->getPublishDate()->format('d.m.Y H:i') : '' ?>" />
                                             <p class="b-form-note">Дата в формате: дд.мм.гггг чч:мм</p>
 
                                     </dd>
