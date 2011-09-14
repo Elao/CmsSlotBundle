@@ -27,6 +27,7 @@ class ArticleCmsSlotType extends BaseCmsSlotType
 
     public function updateSlot(Article $article, $data = array())
     {
+        $article->setCode($data['article_code']);
         $article->setTitle($data['title']);
         $article->setAnnounce($data['announce']);
         $article->setDetail($data['detail']);

@@ -9,6 +9,15 @@
                 
                     <div class="b-form-line">
                             <dl class="b-form-line__in">
+                                    <dt class="b-form-line__label"><label for="article_code"><strong class="b-form-require">Код: <i class="b-ico">*</i></strong></label></dt>
+                                    <dd class="b-form-line__content">
+                                            <input type="text" name="article_code" value="<?php echo $article->getCode() ?>" />
+                                            <p class="b-form-note">Код новости</p>
+
+                                    </dd>
+                            </dl><!-- /b-form-line__in -->
+                        
+                            <dl class="b-form-line__in">
                                     <dt class="b-form-line__label"><label for="title"><strong class="b-form-require">Заголовок: <i class="b-ico">*</i></strong></label></dt>
                                     <dd class="b-form-line__content">
                                             <input type="text" name="title" value="<?php echo $article->getTitle() ?>" />
