@@ -26,7 +26,7 @@ class CoreController extends Controller {
         $slotType->updateSlot($slot, $this->getRequest()->request->all());
         $slotManager->updateSlot($slotType, $slot);
         
-        return $this->render($slotType->getTemplateDisplay(), $slotType->getTemplateDisplayParameters($slot));
+        return $this->render($slotType->getTemplateDisplay(), array_merge($slotType->getTemplateDisplayParameters($slot), array('save' => true)));
     }
 
 }
