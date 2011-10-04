@@ -17,8 +17,10 @@
 <span class="b-date b-date_news"><?php echo $news->getPublishDate()->format('d.m.Y') ?></span>
 <h2 class="b-news-title h3"><?php echo $news->getTitle() ?></h2>
 <div class="b-news-content">
-    <p><?php echo $news->getAnnounce() ?></p>
-    <p><?php echo $news->getDetail() ?></p>
+    <div class="bold">
+        <?php echo $news->getAnnounce() ?>
+    </div>
+    <?php echo $news->getDetail() ?>
     <a href="<?php echo $view['router']->generate('news_list') ?>">Вернуться в список новостей</a>
 </div>
 <?php else : ?>
