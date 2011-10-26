@@ -81,7 +81,7 @@ class CmsSlotManager {
             return false;
         }
 
-        return $this->securityContext->isGranted($this->getPermission()) || $this->securityContext->isGranted('ROLE_HR_ADMIN');
+        return $this->securityContext->isGranted($this->getPermission()) || $this->securityContext->isGranted('ROLE_HR_ADMIN') || $this->securityContext->isGranted('ROLE_SUPPORT_ADMIN');
     }
     
     public function addType(CmsSlotTypeInterface $type, $attributes = array ()) {
