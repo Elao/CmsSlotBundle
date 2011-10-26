@@ -15,7 +15,7 @@
 </div>
 <?php elseif ($options['type'] == 'full') : ?>
 <span class="b-date b-date_news"><?php echo $news->getPublishDate()->format('d.m.Y') ?></span>
-<h2 class="b-news-title h3"><?php echo $news->getTitle() ?></h2>
+<h1 class="b-news-title h3"><?php echo $news->getTitle() ?></h1>
 <div class="b-news-content">
     <div class="bold">
         <?php echo $news->getAnnounce() ?>
