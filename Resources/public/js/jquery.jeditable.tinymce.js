@@ -16,9 +16,6 @@ function initMCE(){
       theme_advanced_resizing : true});
 }
 
-initMCE();
-
-
 $.editable.addInputType('mce', {
    element : function(settings, original) {
       var textarea = $('<textarea id="'+$(original).attr("id")+'_mce"/>');
@@ -36,6 +33,7 @@ $.editable.addInputType('mce', {
          return(textarea);
       },
    plugin : function(settings, original) {
+      initMCE();
       tinyMCE.execCommand("mceAddControl", true, $(original).attr("id")+'_mce');
       },
    submit : function(settings, original) {
