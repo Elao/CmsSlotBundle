@@ -5,14 +5,15 @@ function initMCE(){
       theme_advanced_toolbar_location : "top",
       theme_advanced_toolbar_align : "left",
       theme_advanced_statusbar_location : "bottom",
-      plugins: 'imagemanager, media, paste, advimage,advlink',
+      plugins: 'imagemanager, media, paste, advimage, advlink, template',
       theme_advanced_buttons1 : "bold,italic,strikethrough,separator,bullist,numlist,undo,redo,link,unlink, blockquote, |, justifyleft, justifycenter, justifyright, justifyfull, image ,media,  |, code",
-      theme_advanced_buttons2 : "formatselect,filemanager,pastetext,pasteword,selectall",
+      theme_advanced_buttons2 : "formatselect,filemanager,pastetext,pasteword,selectall, template",
       theme_advanced_buttons3 : "",
       relative_urls : false,
       content_css:	'/css/main.css',
       paste_auto_cleanup_on_paste : true,
       external_link_list_url : "/admin-arbo-site.html",
+      external_template_list_url : "/js/tinytemplate.js",
       theme_advanced_resizing : true});
 }
 
