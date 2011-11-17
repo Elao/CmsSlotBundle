@@ -13,7 +13,7 @@ function initMCE(){
       content_css:	'/css/main.css',
       paste_auto_cleanup_on_paste : true,
       external_link_list_url : "/admin-arbo-site.html",
-      external_template_list_url : "/js/tinytemplate.js",
+      template_external_list_url : "/js/tinytemplate.js",
       theme_advanced_resizing : true});
 }
 
