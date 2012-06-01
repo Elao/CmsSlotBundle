@@ -12,6 +12,14 @@
         <service id="elao.cms_slot.provider.orm" factory-service="doctrine.orm.entity_manager" factory-method="getRepository" class="%elao.cms_slot.provider.orm.class%">
             <argument>Elao\CmsSlotBundle\Entity\CmsSlot</argument>
         </service> 
+        
+        <service id="elao.cms_slot.provider.news" factory-service="doctrine.orm.entity_manager" factory-method="getRepository" class="%elao.cms_slot.provider.orm.class%">
+            <argument>Heliosoft\FinchBundle\Entity\News</argument>
+        </service> 
+        
+        <service id="elao.cms_slot.provider.article" factory-service="doctrine.orm.entity_manager" factory-method="getRepository" class="%elao.cms_slot.provider.orm.class%">
+            <argument>Heliosoft\FinchBundle\Entity\Article</argument>
+        </service> 
     </services>
 
 </container>

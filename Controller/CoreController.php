@@ -20,13 +20,13 @@ class CoreController extends Controller {
         $sType     = $this->getRequest()->request->get('type');
         
         $slotManager  = $this->container->get('elao.cms_slot.manager');
-        $slot         = $slotManager->getSlot($sCode);
         $slotType     = $slotManager->getSlotType($sType);
+        $slot         = $slotManager->getSlot($slotType, $sCode);
 
         $slotType->updateSlot($slot, $this->getRequest()->request->all());
-        $slotManager->updateSlot($slot);
+        $slotManager->updateSlot($slotType, $slot);
         
-        return $this->render($slotType->getTemplateDisplay(), $slotType->getTemplateDisplayParameters($slot));
+        return $this->render($slotType->getTemplateDisplay(), array_merge($slotType->getTemplateDisplayParameters($slot), array('save' => true)));
     }
 
 }

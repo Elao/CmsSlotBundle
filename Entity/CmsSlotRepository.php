@@ -31,10 +31,6 @@ class CmsSlotRepository extends EntityRepository implements CmsSlotProviderInter
     
     public function updateCmsSlot($cmsSlot){
         
-        if (!$cmsSlot instanceof BaseCmsSlot){
-            throw new Exception("Cms Slot passed to updateCmsSlot must be instance of CmsSlot Model");
-        }
-        
         $this->_em->persist($cmsSlot);
         $this->_em->flush();
     }

@@ -21,7 +21,7 @@ use Symfony\Component\Translation\TranslatorInterface;
 class CmsSlotManager {
 
     protected $types;
-    protected $slotProvider;
+    protected $slotProvider = array();
     protected $securityContext = null;
     protected $translator      = null;
     
@@ -38,13 +38,13 @@ class CmsSlotManager {
         $this->types      = array ();
     }
     
-    public function getSlotProvider(){
-        
-        return $this->slotProvider;
+    public function getSlotProvider($slotType){
+        //var_dump($slotType->getName(), $this->slotProvider);die();
+        return $this->slotProvider[$slotType->getName()];
     }
     
-    public function setSlotProvider(CmsSlotProviderInterface $slotProvider){
-        $this->slotProvider = $slotProvider;
+    public function setSlotProvider($type, CmsSlotProviderInterface $slotProvider){
+        $this->slotProvider[$type] = $slotProvider;
     }
     
     public function getUseI18n(){
@@ -81,7 +81,7 @@ class CmsSlotManager {
             return false;
         }
 
-        return $this->securityContext->isGranted($this->getPermission());
+        return $this->securityContext->isGranted($this->getPermission()) || $this->securityContext->isGranted('ROLE_HR_ADMIN') || $this->securityContext->isGranted('ROLE_SUPPORT_ADMIN');
     }
     
     public function addType(CmsSlotTypeInterface $type, $attributes = array ()) {
@@ -111,14 +111,14 @@ class CmsSlotManager {
         return $this->types;
     }
 
-    public function getSlot($slotName) {
+    public function getSlot($slotType, $slotName) {
         
-        return $this->getSlotProvider()->getCmsSlot($slotName);
+        return $this->getSlotProvider($slotType)->getCmsSlot($slotName);
     }
     
-    public function updateSlot(CmsSlot $slot) {
+    public function updateSlot($slotType, $slot) {
         
-        $this->getSlotProvider()->updateCmsSlot($slot);
+        $this->getSlotProvider($slotType)->updateCmsSlot($slot);
     }
 
 }
