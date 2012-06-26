@@ -16,12 +16,12 @@
             <argument type="collection">
                 <argument key="i18n">%elao.cms_slot.manager.i18n%</argument>
                 <argument key="permission">%elao.cms_slot.manager.permission%</argument>
-            </argument>        
+            </argument>
         </service>
         <service id="twig.extension.elao.cms_slot" class="%twig.extension.elao.cms_slot.class%" public="false">
             <argument type="service" id="elao.cms_slot.manager" />
             <tag name="twig.extension" />
         </service>
     </services>
-	
+
 </container>

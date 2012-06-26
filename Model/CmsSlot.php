@@ -15,37 +15,36 @@ abstract class CmsSlot
      * @var string
      */
     protected $code;
-   
+
     /**
      * @var array
      */
     protected $content;
 
-    
-    public function __construct(){
-        
+    public function __construct()
+    {
         $this->code    = '';
         $this->content = array();
     }
-    
-    public function getCode(){
-        
-    	return $this->code;
+
+    public function getCode()
+    {
+        return $this->code;
     }
-    
-    public function setCode($code){
-        
-    	$this->code = $code;
+
+    public function setCode($code)
+    {
+        $this->code = $code;
     }
-    
-    public function getContent(){
-        
-    	return $this->content;
+
+    public function getContent()
+    {
+        return $this->content;
     }
-    
-    public function setContent(array $content){
-        
-    	$this->content = $content;
+
+    public function setContent(array $content)
+    {
+        $this->content = $content;
     }
-	
+
 }

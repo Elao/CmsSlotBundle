@@ -11,7 +11,7 @@
     <services>
         <service id="elao.cms_slot.provider.orm" factory-service="doctrine.orm.entity_manager" factory-method="getRepository" class="%elao.cms_slot.provider.orm.class%">
             <argument>Elao\CmsSlotBundle\Entity\CmsSlot</argument>
-        </service> 
+        </service>
     </services>
 
 </container>

@@ -13,7 +13,5 @@ use Elao\CmsSlotBundle\Model\CmsSlot as AbstractCmsSlot;
 
 abstract class CmsSlot extends AbstractCmsSlot
 {
-	
-	
-	
+
 }
