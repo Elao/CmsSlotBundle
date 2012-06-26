@@ -13,5 +13,5 @@
             <tag name="elao.cms_slot.type" template_display="ElaoCmsSlotBundle:CmsSlotType:jeditable_display.html.twig" template_edit="ElaoCmsSlotBundle:CmsSlotType:jeditable_edit.html.twig" />
         </service>
     </services>
-	
+
 </container>

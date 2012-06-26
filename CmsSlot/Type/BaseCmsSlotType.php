@@ -13,21 +13,25 @@ abstract class BaseCmsSlotType implements CmsSlotTypeInterface
 {
     protected $templateDisplay;
     protected $templateEdit;
-	
-    function setTemplateDisplay($templateDisplay){
+
+    public function setTemplateDisplay($templateDisplay)
+    {
         $this->templateDisplay = $templateDisplay;
     }
-    
-    function getTemplateDisplay(){
+
+    public function getTemplateDisplay()
+    {
         return $this->templateDisplay;
     }
-    
-    function setTemplateEdit($templateEdit){
+
+    public function setTemplateEdit($templateEdit)
+    {
         $this->templateEdit = $templateEdit;
     }
-    
-    function getTemplateEdit(){
+
+    public function getTemplateEdit()
+    {
         return $this->templateEdit;
     }
-	
+
 }
