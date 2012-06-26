@@ -10,7 +10,6 @@
 namespace Elao\CmsSlotBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
-use Doctrine\ORM\Query;
 
 use Elao\CmsSlotBundle\CmsSlot\Provider\CmsSlotProviderInterface;
 use Elao\CmsSlotBundle\Model\CmsSlot as BaseCmsSlot;
@@ -18,25 +17,26 @@ use Elao\CmsSlotBundle\Entity\CmsSlot;
 
 class CmsSlotRepository extends EntityRepository implements CmsSlotProviderInterface
 {
-    
-    public function getCmsSlot($code){
-        
+
+    public function getCmsSlot($code)
+    {
         $cmsSlot = $this->findOneBy(array('code' => $code));
-        if (!$cmsSlot){
+        if (!$cmsSlot) {
             $cmsSlot = new CmsSlot();
             $cmsSlot->setCode($code);
         }
+
         return $cmsSlot;
     }
-    
-    public function updateCmsSlot($cmsSlot){
-        
-        if (!$cmsSlot instanceof BaseCmsSlot){
+
+    public function updateCmsSlot($cmsSlot)
+    {
+        if (!$cmsSlot instanceof BaseCmsSlot) {
             throw new Exception("Cms Slot passed to updateCmsSlot must be instance of CmsSlot Model");
         }
-        
+
         $this->_em->persist($cmsSlot);
         $this->_em->flush();
     }
-    
+
 }

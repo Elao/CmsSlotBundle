@@ -11,7 +11,6 @@ namespace Elao\CmsSlotBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder;
 
-use Symfony\Component\Config\Definition\Builder\NodeBuilder;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 
 /**
@@ -36,7 +35,7 @@ class Configuration
 
         $rootNode
             ->children()
-            	->scalarNode('db_driver')->cannotBeOverwritten()->isRequired()->cannotBeEmpty()->end()
+                ->scalarNode('db_driver')->cannotBeOverwritten()->isRequired()->cannotBeEmpty()->end()
                 ->scalarNode('slot_provider')->end()
                 ->scalarNode('permission')->defaultValue('CMS_SLOT_EDIT')->end()
                 ->arrayNode('tinymce')

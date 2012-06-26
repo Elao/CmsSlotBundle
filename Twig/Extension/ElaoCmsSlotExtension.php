@@ -16,18 +16,21 @@ class ElaoCmsSlotExtension extends \Twig_Extension {
     protected $templating;
     protected $slotManager;
 
-    public function __construct(CmsSlotManager $slotManager) {
+    public function __construct(CmsSlotManager $slotManager)
+    {
         $this->slotManager = $slotManager;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function initRuntime(\Twig_Environment $environment) {
+    public function initRuntime(\Twig_Environment $environment)
+    {
         $this->environment = $environment;
     }
 
-    public function getSlotManager() {
+    public function getSlotManager()
+    {
         return $this->slotManager;
     }
 
@@ -35,35 +38,37 @@ class ElaoCmsSlotExtension extends \Twig_Extension {
      * (non-PHPdoc)
      * @see Twig_Extension::getFunctions()
      */
-    public function getFunctions() {
+    public function getFunctions()
+    {
         return array (
             'cms_slot' => new \Twig_Function_Method($this, 'renderCmsSlot', array ('is_safe' => array ('html')))
         );
     }
 
-    public function renderCmsSlot($slotType, $slotName, $parameters = array ()) {
-        
+    public function renderCmsSlot($slotType, $slotName, $parameters = array ())
+    {
         // Slot Type
         $slotType  = $this->getSlotManager()->getSlotType($slotType);
         $slotName  = $this->getSlotManager()->formatSlotName($slotName);
         $editMode  = $this->getSlotManager()->isEditMode();
-        
-        if (!$slotType){
+
+        if (!$slotType) {
             throw new Exception("The slotType $slotType is not found");
         }
-        
+
         // Slot object
         $slot      = $this->getSlotManager()->getSlot($slotName);
-        
+
         // Je suis en mode édition
-        if ($editMode){
+        if ($editMode) {
             $template   = $slotType->getTemplateEdit();
             $parameters = $slotType->getTemplateEditParameters($slot, $parameters);
-        }else{
+        } else {
             $template   = $slotType->getTemplateDisplay();
             $parameters = $slotType->getTemplateDisplayParameters($slot, $parameters);
         }
         $_template = $this->environment->loadTemplate($template);
+
         return $_template->render($parameters);
     }
 
@@ -72,7 +77,8 @@ class ElaoCmsSlotExtension extends \Twig_Extension {
      *
      * @return string The extension name
      */
-    public function getName() {
+    public function getName()
+    {
         return 'elao_cms_slot';
     }
 
@@ -82,7 +88,8 @@ class ElaoCmsSlotExtension extends \Twig_Extension {
      * @param  $templating
      * @return void
      */
-    public function setTemplating($templating) {
+    public function setTemplating($templating)
+    {
         $this->templating = $templating;
     }
 
@@ -91,9 +98,9 @@ class ElaoCmsSlotExtension extends \Twig_Extension {
      *
      * @return Engine
      */
-    public function getTemplating() {
+    public function getTemplating()
+    {
         return $this->templating;
     }
 
 }
-

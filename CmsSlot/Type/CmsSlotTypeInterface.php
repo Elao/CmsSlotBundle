@@ -11,33 +11,32 @@ namespace Elao\CmsSlotBundle\CmsSlot\Type;
 
 interface CmsSlotTypeInterface
 {
-    function retrieveParams();
+    public function retrieveParams();
 
     /**
      * return the cmslot type name
      * @return string
      */
-    function getName();
-    
+    public function getName();
+
     /**
      * Set the display template for this slot type
      */
-    function setTemplateDisplay($templateDisplay);
-    
+    public function setTemplateDisplay($templateDisplay);
+
     /**
      * Get the display template for this slot type
      */
-    function getTemplateDisplay();
-    
-    
+    public function getTemplateDisplay();
+
     /**
      * Set the edit template for this slot type
      */
-    function setTemplateEdit($templateEdit);
-    
+    public function setTemplateEdit($templateEdit);
+
     /**
      * Get the edit template for this slot type
      */
-    function getTemplateEdit();
-    
+    public function getTemplateEdit();
+
 }
