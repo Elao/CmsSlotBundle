@@ -83,7 +83,7 @@ class CmsSlotManager
             return false;
         }
 
-        return $this->securityContext->isGranted($this->getPermission());
+        return $this->securityContext->getToken() && $this->securityContext->isGranted($this->getPermission());
     }
 
     public function addType(CmsSlotTypeInterface $type, $attributes = array ())
