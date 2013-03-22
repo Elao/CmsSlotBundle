@@ -4,19 +4,44 @@ ElaoCmsSlotBundle
 ElaoCmsSlotBundle implements a low-level cms slot management. 
 It allows you to integrate editable slots in your application.
 
-
 Installation
 ------------
 
-`Download`_ the bundle and put it under the ``Elao\CmsSlotBundle\`` namespace.
-Then include it in your Kernel class::
+**Step 1: Download.**
 
+`Download`_ the bundle and put it under the ``Elao\CmsSlotBundle\`` namespace.
+
+Via composer::
+
+
+    // composer.json
+    {
+        // ...
+        "require": {
+            // ...
+            "elao/cms-slot-bundle": "dev-master"
+        }
+    }
+
+Update your composer.phar::
+
+    $ php composer.phar update
+
+
+**Step 2: Register bundles with AppKernel.php.**
+
+Include it in your Kernel class::
+
+
+    // app/AppKernel.php
     public function registerBundles()
     {
         $bundles = array(
             new Elao\CmsSlotBundle\ElaoCmsSlotBundle(),
+            ...
         );
     }
+
 
 Configuration
 -------------
@@ -91,7 +116,7 @@ to attributes: template_display and template_edit).
             <tag name="elao.cms_slot.type" template_display="ElaoCmsSlotBundle:CmsSlotType:jeditable_display.html.twig" template_edit="ElaoCmsSlotBundle:CmsSlotType:jeditable_edit.html.twig" />
         </service>
     </services>
-	
+    
 The bundle comes by default with one Slot Type : jeditable
 
 
