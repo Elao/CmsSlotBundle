@@ -27,6 +27,12 @@
             "Elao\\CmsSlotBundle": "."
         }
     },
+    
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
 
     "target-dir": "Elao/CmsSlotBundle"
 }
