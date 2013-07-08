@@ -9,8 +9,6 @@
 
 namespace Elao\CmsSlotBundle\CmsSlot\Provider;
 
-use Elao\CmsSlotBundle\Model\CmsSlot;
-
 interface CmsSlotProviderInterface
 {
     public function getCmsSlot($code);
